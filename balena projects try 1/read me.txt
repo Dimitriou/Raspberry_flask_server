@@ -1,3 +1,0 @@
-flask server we use get and post methods,
-html with led1, led2, led3
-no gpio library
