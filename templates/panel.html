@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+
+
+	.outputs{	
+		display: flex;
+		flex-flow: row;
+		text-align: center;
+		justify-content: space-around;
+		width:100%;
+		background:gray;
+		height:auto;
+	}
+
+	@media screen and (max-width:800px){
+		.outputs{
+			flex-flow: column;
+		}
+	}
+
+	.outcontainer{	
+		display: flex;
+		flex-flow: row;
+		text-align: center;
+		justify-content: space-around;
+		width:45%;
+		background:darkgray;
+		height:auto;
+	}
+
+	@media screen and (max-width:800px){
+		.outcontainer{
+			width:100%;
+		}
+	}
+
+	.box{
+		width:25%;
+		height:40px;
+		background:#E8FBFF;
+		margin: 20px;
+		box-sizing: border-box;
+		font-size: 30px;
+		text-align: center;
+		text-decoration: none;
+	}
+
+	@media screen and (max-width:700px){
+		.box{
+			width:30%;
+		}
+	}
+
+
+	.led1{
+		width:8%;
+		height:41px;
+		background:red;
+		margin: 20px;
+		border-radius: 30%;
+	}
+
+	@media screen and (max-width:700px){
+		.led1{
+			width:10%;
+		}
+	}
+
+	.led2{
+		width:8%;
+		height:41px;
+		background:red;
+		margin: 20px;
+		border-radius: 30%;
+	}
+
+	@media screen and (max-width:700px){
+		.led2{
+			width:10%;
+		}
+	}
+
+	.led3{
+		width:8%;
+		height:41px;
+		background:red;
+		margin: 20px;
+		border-radius: 30%;
+	}
+
+	@media screen and (max-width:700px){
+		.led3{
+			width:10%;
+		}
+	}
+
+	.led4{
+		width:8%;
+		height:41px;
+		background:red;
+		margin: 20px;
+		border-radius: 30%;
+	}
+
+	@media screen and (max-width:700px){
+		.led4{
+			width:10%;
+		}
+	}
+	
+
+	.inputs{	
+		display: flex;
+		flex-flow: row;
+		text-align: center;
+		justify-content: space-around;
+		width:100%;
+		background:darkgray;
+		height:auto;
+	}
+
+	.sensors{
+		width:15%;
+		height:40px;
+		background:yellow;
+		margin: 20px;
+		border-radius: 20%;
+		box-sizing: border-box;
+		font-size: 25px;
+		text-align: center;
+		text-decoration: none;
+	}
+
+	@media screen and (max-width:800px){
+		.sensors{
+			width:30%;
+		}
+	}
+
+	.info1{	
+		display: flex;
+		flex-flow: center;
+		text-align: center;
+		justify-content: space-around;
+		width:100%;
+		background:white;
+		height:auto;
+	}
+
+	.info2{	
+		display: flex;
+		flex-flow: row;
+		text-align: center;
+		justify-content: space-around;
+		width:50%;
+		background:white;
+		height:auto;
+	}
+
+
+
+</style>
+</head>
+<body>
+
+{% extends "index.html" %}
+{% block content %}
+
+<br>
+
+<div class="outputs">
+<form class="outcontainer" action="#" method="POST">
+    <h1>Out1</h1>
+	<button name="subject" type="submit" value="11" class="box">ON</button>
+	<button name="subject" type="submit" value="10" class="box">OFF</button>
+	<box id="led1" class="led1"></box>
+</form>
+<form class="outcontainer" action="#" method="POST">
+    <h1>Out2</h1>
+	<button name="subject" type="submit" value="21" class="box">ON</button>
+	<button name="subject" type="submit" value="20" class="box">OFF</button>
+	<box id="led2" class="led2"></box>
+</form>
+</div>
+
+<div class="outputs">
+<form class="outcontainer" action="#" method="POST">
+    <h1>Out3</h1>
+	<button name="subject" type="submit" value="31" class="box">ON</button>
+	<button name="subject" type="submit" value="30" class="box">OFF</button>
+	<box id="led3" class="led3"></box>
+</form>
+<form class="outcontainer" action="#" method="POST">
+    <h1>Out4</h1>
+	<button name="subject" type="submit" value="41" class="box">ON</button>
+	<button name="subject" type="submit" value="40" class="box">OFF</button>
+	<box id="led4" class="led4"></box>
+</form>
+</div>
+
+<br>
+
+<div class="inputs">
+		<box id="sensors" class="sensors">sensor 1</box>
+		<box id="sensors" class="sensors">sensor 2</box>
+</div>
+
+<br>
+<br>
+
+<div class="info1">
+	<article class="info2">
+		<p id="loginmsg" style="color:red">You have to log in to use the buttons.</p>  
+	</article>
+</div>
+
+
+<script>
+if ({{logmsg}} == 1){
+	document.getElementById("loginmsg").style.visibility = "hidden";
+}
+</script>
+
+
+<script>
+if ({{i}} == 11){
+	document.getElementById("led1").style.backgroundColor = "green";
+}
+</script>
+
+<script>
+if ({{j}} == 21){
+	document.getElementById("led2").style.backgroundColor = "green";
+}
+</script>
+
+<script>
+if ({{k}} == 31){
+	document.getElementById("led3").style.backgroundColor = "green";
+}
+</script>
+
+<script>
+if ({{l}} == 41){
+	document.getElementById("led4").style.backgroundColor = "green";
+}
+</script>
+
+{% endblock %}
+
+</body>
+</html>
+

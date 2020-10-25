@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+
+    <style type="text/css">
+
+        .navigation {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-end;
+  
+            list-style: none;
+            margin: 0; 
+            background: deepskyblue;
+        }
+
+        .navigation a {
+            text-decoration: none;
+            display: block;
+            padding: 1em;
+            color: white;
+        }
+
+        .navigation a:hover {
+            background: #1565C0;
+        }
+
+        @media all and (max-width: 800px) {
+            .navigation {
+              justify-content: space-around;
+            }
+        }
+
+
+        .container{ 
+            display: flex;
+            flex-flow: column;
+            text-align: center;
+            justify-content: space-around;
+            width:100%;
+            background:white;
+            height:auto;
+        }
+
+
+
+    </style>
+    <meta charset="utf-8">
+ </head>
+ <body>
+    <header>
+      <div>
+        <strong><nav>
+          <ul class="navigation">
+            <li><a href="{{ url_for('info') }}">CV</a></li>
+            <li><a href="{{ url_for('projects') }}">Projects</a></li>
+            <li><a href="{{ url_for('log') }}">Log in</a></li>
+          </ul>
+        </strong></nav>
+      </div>
+    </header>
+
+
+    {% block content %}
+    {% endblock %}
+    
+ </body>
+</html>
